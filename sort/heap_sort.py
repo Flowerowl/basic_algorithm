@@ -21,14 +21,11 @@ def heapify(heap, size, root):
         heapify(heap, size, tmp)
 
 
-def build_max_heap(heap):
+def heap_sort(heap):
     size = len(heap)
-    for i in xrange((size -2)//2, -1, -1):
+    for i in xrange((size-2)//2, -1, -1):
         heapify(heap, size, i)
 
-
-def heap_sort(heap):
-    build_max_heap(heap)
     for i in range(len(heap)-1, -1, -1):
         heap[0], heap[i] = heap[i], heap[0]
         heapify(heap, i, 0)
